@@ -1,0 +1,101 @@
+/*
+* Typography
+ */
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	color: $color__main-text;
+}
+
+$fonts: (
+	'dm-serif' : $font__dm-serif,
+	'montserrat' : $font__montserrat,
+	'spartan' : $font__spartan
+);
+
+@each $name, $font in $fonts{
+	.#{$name} {
+		font-family: $font;
+	}
+}
+
+.logos {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: $size__spacing-unit;
+	padding: $size__spacing-unit;
+}
+
+#branding {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+
+	& > * {
+		margin-right: 3px;
+		line-height: 1;
+	}
+
+	.surround {
+		font-family: $font__spartan;
+	}
+
+	.both {
+		font-family: $font__montserrat;
+	}
+
+	.and {
+		font-family: $font__dm-serif;
+	}
+
+	&-gradient {
+		display: inline-flex;
+		align-items: center;
+		background: -webkit-linear-gradient(20deg, #D70040 30%, #0068d7 85%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.surround {
+	font-size: 20px;
+
+	&:first-child {
+		margin-right: 3px;
+	}
+}
+
+.both {
+	font-size: 28px;
+	font-weight: 700;
+	margin-right: 3px;
+}
+
+.and {
+	font-size: 60px;
+	font-weight: 700;
+}
+
+.text {
+	padding: $size__spacing-unit;
+
+	p {
+		font-weight: 400;
+	}
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700 !important;
+}
